@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { PageHero } from "@/components/PageHero";
-import { mailHref, site, telHref } from "@/lib/site";
+import { fullAddress, mailHref, site, telHref } from "@/lib/site";
 
 export type LegalSection = { title: string; body: ReactNode };
 
@@ -64,7 +64,7 @@ export function LegalPage({
             <div className="mt-14 rounded-2xl border-[1.5px] border-navy-700/15 bg-paper p-6 shadow-[5px_5px_0_rgb(0_160_152/0.16)]">
               <p className="font-display text-xl text-navy-700">{site.name}</p>
               <p className="mt-1 text-[15px] text-muted">
-                {site.address.line}, {site.address.city}, {site.address.state} {site.address.pin}
+                {fullAddress}
               </p>
               <p className="mt-2 text-[15px]">
                 <a href={telHref} className="link-line font-medium text-teal-600">

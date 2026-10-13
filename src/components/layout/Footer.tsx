@@ -4,7 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import { FooterColumn } from "@/components/layout/FooterColumn";
 import { Year } from "@/components/layout/Year";
 import { services } from "@/lib/services";
-import { mailHref, site, telHref, waHref } from "@/lib/site";
+import { fullAddress, mailHref, site, telHref, waHref } from "@/lib/site";
 
 const company = [
   { href: "/about", label: "About Us" },
@@ -107,11 +107,7 @@ export function Footer() {
           <div className="pt-8 lg:pt-0">
             <span className="block text-xs leading-4 font-semibold uppercase tracking-[0.2em] text-white/55">Visit / Write</span>
             <address className="mt-6 space-y-4 text-[15px] not-italic leading-relaxed text-white/65">
-              <p>
-                {site.address.line}
-                <br />
-                {site.address.city}, {site.address.state} {site.address.pin}
-              </p>
+              <p>{fullAddress}</p>
               <p>
                 <a href={mailHref} className="link-line text-white hover:text-teal-300">
                   {site.email}

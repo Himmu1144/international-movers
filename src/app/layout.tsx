@@ -48,10 +48,10 @@ const businessSchema = {
   email: site.email,
   address: {
     "@type": "PostalAddress",
-    streetAddress: site.address.line,
+    streetAddress: site.address.line || undefined,
     addressLocality: site.address.city,
     addressRegion: site.address.state,
-    postalCode: site.address.pin,
+    postalCode: site.address.pin || undefined,
     addressCountry: "IN",
   },
   areaServed: ["Gurgaon", "Delhi NCR", "India", "Worldwide"],

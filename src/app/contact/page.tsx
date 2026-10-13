@@ -4,7 +4,7 @@ import { WhatsAppIcon } from "@/components/icons";
 import { Reveal } from "@/components/motion";
 import { PageHero } from "@/components/PageHero";
 import { QuoteForm } from "@/components/QuoteForm";
-import { mailHref, site, telHref, waHref } from "@/lib/site";
+import { fullAddress, mailHref, site, telHref, waHref } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: { absolute: "Contact Us | Free Moving Quote | International Movers and Storage" },
@@ -13,7 +13,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
 };
 
-const fullAddress = `${site.address.line}, ${site.address.city}, ${site.address.state} ${site.address.pin}`;
 
 const channels = [
   { icon: Phone, label: "Call us", value: site.phoneDisplay, href: telHref, note: "Fastest way to get a quote" },
