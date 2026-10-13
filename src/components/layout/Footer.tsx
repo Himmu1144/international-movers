@@ -138,7 +138,6 @@ export function Footer() {
             © <Year /> {site.name}. All rights reserved.
           </p>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
-            <span>{site.gst}</span>
             <Link href="/privacy-policy" className="link-line hover:text-white">
               Privacy Policy
             </Link>
