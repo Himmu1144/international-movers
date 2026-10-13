@@ -1,13 +1,13 @@
 import nodemailer from "nodemailer";
 import { site } from "@/lib/site";
 
-// Sends quote enquiries over SMTP — works with Brevo, Hostinger, Gmail etc. (switch by changing env vars only).
+// Sends quote enquiries over SMTP from the Hostinger mailbox (any SMTP provider works by changing env vars only).
 // Env vars (Vercel → Project → Settings → Environment Variables):
-//   SMTP_HOST   e.g. smtp-relay.brevo.com | smtp.hostinger.com
-//   SMTP_PORT   587 (Brevo) | 465 (Hostinger/Gmail)
-//   SMTP_USER   SMTP login
-//   SMTP_PASS   SMTP key / password
-//   SMTP_FROM   sender address, e.g. website@theirdomain.com (defaults to SMTP_USER)
+//   SMTP_HOST   smtp.hostinger.com (default)
+//   SMTP_PORT   465 (default)
+//   SMTP_USER   mailbox login, e.g. info@internationalmoversandstorage.com
+//   SMTP_PASS   mailbox password
+//   SMTP_FROM   sender address, (defaults to SMTP_USER)
 //   QUOTE_TO    inbox that receives enquiries (defaults to SMTP_FROM)
 
 const clean = (v: unknown, max = 200) =>
@@ -43,7 +43,7 @@ export async function POST(request: Request) {
     return Response.json({ ok: false, error: "Please fill in all fields with a valid mobile number." }, { status: 422 });
   }
 
-  const { SMTP_USER, SMTP_PASS, QUOTE_TO, SMTP_HOST = "smtp-relay.brevo.com", SMTP_PORT = "587" } = process.env;
+  const { SMTP_USER, SMTP_PASS, QUOTE_TO, SMTP_HOST = "smtp.hostinger.com", SMTP_PORT = "465" } = process.env;
   const SMTP_FROM = process.env.SMTP_FROM || SMTP_USER;
   if (!SMTP_USER || !SMTP_PASS) {
     console.error("[quote] SMTP_USER / SMTP_PASS not configured");

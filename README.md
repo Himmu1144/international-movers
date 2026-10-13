@@ -25,4 +25,4 @@ Open http://localhost:3000.
 
 - **Business details** (phone, email, address, stats) live in `src/lib/site.ts`.
 - **Services and their page content** live in `src/lib/services.ts` and `src/lib/service-content.ts`.
-- **Quote form email** is sent over SMTP from `src/app/api/quote/route.ts`. Copy `.env.example` to `.env.local` and fill in the SMTP values (Brevo, Hostinger etc.). On Vercel, set the same variables under Project → Settings → Environment Variables.
+- **Quote form email** is sent over SMTP from `src/app/api/quote/route.ts`. Copy `.env.example` to `.env.local` and fill in the SMTP values (Hostinger mailbox by default). On Vercel, set the same variables under Project → Settings → Environment Variables.

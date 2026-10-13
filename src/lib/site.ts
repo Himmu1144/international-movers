@@ -5,12 +5,12 @@ export const site = {
   name: "International Movers and Storage",
   shortName: "International Movers",
   tagline: "Your Move • Our Global Reach",
-  url: "https://example.com", // PLACEHOLDER: client domain
+  url: "https://internationalmoversandstorage.com",
 
   phone: "+919999999999", // PLACEHOLDER
   phoneDisplay: "99999 99999", // PLACEHOLDER
   whatsapp: "919999999999", // PLACEHOLDER (digits only, with country code)
-  email: "info@example.com", // PLACEHOLDER
+  email: "info@internationalmoversandstorage.com",
 
   address: {
     line: "Office Address Line", // PLACEHOLDER
