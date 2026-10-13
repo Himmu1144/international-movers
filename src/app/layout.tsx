@@ -6,6 +6,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MotionProvider } from "@/components/motion";
 import { MobileBar } from "@/components/layout/MobileBar";
+import { HashScroll } from "@/components/HashScroll";
 import { JsonLd } from "@/components/JsonLd";
 import { services } from "@/lib/services";
 import "./globals.css";
@@ -82,6 +83,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <main className="flex-1">{children}</main>
           <Footer />
           <MobileBar />
+          <HashScroll />
         </MotionProvider>
       </body>
     </html>
