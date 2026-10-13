@@ -32,14 +32,16 @@ export async function POST(request: Request) {
 
   const data = {
     name: clean(body.name, 80),
-    phone: clean(body.phone, 20),
+    phone: clean(body.phone, 20)
+      .replace(/\D/g, "")
+      .replace(/^(91(?=\d{10}$)|0(?=\d{10}$))/, ""),
     from: clean(body.from, 120),
     to: clean(body.to, 120),
     service: clean(body.service, 60),
     page: clean(body.page, 200),
   };
 
-  if (!data.name || !/^[0-9+\s-]{10,16}$/.test(data.phone) || !data.from || !data.to) {
+  if (!data.name || !/^[6-9]\d{9}$/.test(data.phone) || !data.from || !data.to) {
     return Response.json({ ok: false, error: "Please fill in all fields with a valid mobile number." }, { status: 422 });
   }
 
@@ -66,8 +68,8 @@ export async function POST(request: Request) {
     ["Sent from page", data.page],
   ];
 
-  const digits = data.phone.replace(/\D/g, "");
-  const waNumber = digits.length === 10 ? `91${digits}` : digits;
+  const digits = data.phone;
+  const waNumber = `91${digits}`;
 
   try {
     await transporter.sendMail({

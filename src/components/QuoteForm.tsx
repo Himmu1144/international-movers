@@ -133,7 +133,14 @@ export function QuoteForm({
                 type="tel"
                 inputMode="numeric"
                 required
-                pattern="[0-9+\s]{10,14}"
+                pattern="[6-9][0-9]{9}"
+                title="Enter a 10-digit mobile number"
+                onChange={(e) => {
+                  // Digits only, max 10; a pasted "+91 98765 43210" or "098765 43210" drops the prefix.
+                  let d = e.currentTarget.value.replace(/\D/g, "");
+                  if (d.length > 10 && /^(91|0)/.test(d)) d = d.replace(/^(91|0)/, "");
+                  e.currentTarget.value = d.slice(0, 10);
+                }}
                 autoComplete="tel"
                 placeholder="10-digit mobile"
               />
