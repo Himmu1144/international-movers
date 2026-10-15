@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Clock, Mail, MapPin, Phone } from "lucide-react";
 import { FooterColumn } from "@/components/layout/FooterColumn";
 import { Year } from "@/components/layout/Year";
 import { services } from "@/lib/services";
@@ -107,17 +107,27 @@ export function Footer() {
           <div className="pt-8 lg:pt-0">
             <span className="block text-xs leading-4 font-semibold uppercase tracking-[0.2em] text-white/55">Visit / Write</span>
             <address className="mt-6 space-y-4 text-[15px] not-italic leading-relaxed text-white/65">
-              <p>{fullAddress}</p>
-              <p>
-                <a href={mailHref} className="link-line text-white hover:text-teal-300">
-                  {site.email}
-                </a>
-                <br />
-                <a href={telHref} className="link-line hover:text-white">
+              <p className="flex gap-3">
+                <MapPin className="mt-1 size-4 shrink-0 text-teal-300" />
+                {fullAddress}
+              </p>
+              <p className="flex gap-3">
+                <Phone className="mt-1 size-4 shrink-0 text-teal-300" />
+                <a href={telHref} className="link-line text-white hover:text-teal-300">
                   {site.phoneDisplay}
                 </a>
               </p>
-              <p className="text-white/60">{site.hours}</p>
+              <p className="flex gap-3">
+                <Mail className="mt-1 size-4 shrink-0 text-teal-300" />
+                <a href={mailHref} className="link-line break-words text-white hover:text-teal-300">
+                  {site.email.split("@")[0]}@<wbr />
+                  {site.email.split("@")[1]}
+                </a>
+              </p>
+              <p className="flex gap-3 text-white/60">
+                <Clock className="mt-1 size-4 shrink-0 text-teal-300" />
+                {site.hours}
+              </p>
             </address>
           </div>
         </div>
