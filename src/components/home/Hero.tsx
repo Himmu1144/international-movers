@@ -9,10 +9,10 @@ import { site, telHref, waHref } from "@/lib/site";
 const ORIGIN = { x: 1235, y: 233 }; // Gurgaon
 const routes = [
   { name: "Dubai", x: 1126, y: 249 },
-  { name: "London", x: 849, y: 118 },
-  { name: "Singapore", x: 1369, y: 368 },
+  { name: "Colombo", x: 1249, y: 340 },
+  { name: "Kathmandu", x: 1277, y: 237 },
+  { name: "Thimphu", x: 1298, y: 238 },
   { name: "Toronto", x: 453, y: 157 },
-  { name: "Sydney", x: 1606, y: 545 },
 ];
 
 function arc(to: { x: number; y: number }) {
@@ -22,7 +22,7 @@ function arc(to: { x: number; y: number }) {
   return `M${ORIGIN.x} ${ORIGIN.y} Q${mx} ${my} ${to.x} ${to.y}`;
 }
 
-const heroStats = [site.stats[0], site.stats[2], site.stats[3]];
+const heroStats = site.stats.slice(0, 3);
 
 export function Hero() {
   return (
@@ -97,12 +97,12 @@ export function Hero() {
             </p>
           </Reveal>
 
-          <h1 className="mt-7 text-[2.9rem] leading-[1.02] !text-white sm:text-6xl lg:text-[4.6rem]">
-            <MaskLine delay={0.15}>Every move,</MaskLine>
+          <h1 className="mt-7 text-[2rem] leading-[1.1] !text-white sm:text-[2.75rem] lg:text-[3.25rem]">
+            <MaskLine delay={0.15}>Packers, Movers and Storage Solutions for Every Move –{" "}</MaskLine>
             <MaskLine delay={0.28}>
-              handled with{" "}
+              From Doorstep to{" "}
               <span className="relative inline-block">
-                <span className="accent !text-teal-300">care</span>
+                <span className="accent !text-teal-300">Destination</span>
                 <svg
                   aria-hidden
                   viewBox="0 0 200 20"
@@ -120,7 +120,6 @@ export function Hero() {
                   />
                 </svg>
               </span>
-              .
             </MaskLine>
           </h1>
 

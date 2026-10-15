@@ -6,9 +6,9 @@ import { PageHero } from "@/components/PageHero";
 import { services } from "@/lib/services";
 
 export const metadata: Metadata = {
-  title: { absolute: "Moving Guides & Tips | International Movers and Storage Blog" },
+  title: { absolute: "Moving Tips and Guides | International Movers and Storage" },
   description:
-    "Practical guides on packing, moving costs, house shifting checklists, storage and relocating within India or abroad.",
+    "Explore practical moving tips, packing checklists, relocation cost guides and expert advice for local shifting, domestic moves and international relocation.",
   alternates: { canonical: "/blog" },
 };
 

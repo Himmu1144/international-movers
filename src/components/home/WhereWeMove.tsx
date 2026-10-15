@@ -45,15 +45,23 @@ const indiaRoutes: Pin[] = [
 ];
 const popularRoutes = ["Bengaluru", "Mumbai", "Pune", "Hyderabad", "Chennai", "Kolkata"];
 const ncrAreas = [
-  "DLF Phase 1–5",
-  "Golf Course Road",
-  "Sohna Road",
+  "Gurgaon",
+  "DLF Phase 1",
+  "DLF Phase 3",
+  "Sector 24",
+  "Sector 44",
+  "Sector 56",
+  "Sector 57",
+  "Sector 67",
   "Sushant Lok",
-  "South City",
-  "Cyber City",
-  "Udyog Vihar",
-  "New Gurgaon",
+  "Sohna",
   "Delhi",
+  "Dwarka",
+  "Dwarka Sector 23",
+  "Saket",
+  "Greater Kailash",
+  "Vasant Vihar",
+  "Green Park",
   "Noida",
   "Faridabad",
 ];
@@ -63,16 +71,12 @@ const W_W = 1800;
 const W_H = 665;
 const wp = (name: string, lon: number, lat: number, note: string): Pin => ({ name, x: (lon + 170) * 5, y: (75 - lat) * 5, note });
 const WORLD_ORIGIN = wp("Gurgaon", 77.03, 28.46, "");
-// TODO(client): confirm the countries they actually serve.
 const worldRoutes: Pin[] = [
+  wp("Nepal", 85.32, 27.71, "Kathmandu"),
+  wp("Bhutan", 89.64, 27.47, "Thimphu"),
   wp("Dubai", 55.27, 25.2, "UAE"),
-  wp("Doha", 51.53, 25.29, "Qatar"),
-  wp("London", -0.12, 51.5, "United Kingdom"),
-  wp("Frankfurt", 8.68, 50.11, "Germany"),
-  wp("Toronto", -79.38, 43.65, "Canada"),
-  wp("New York", -74.0, 40.71, "USA"),
-  wp("Singapore", 103.82, 1.35, "Singapore"),
-  wp("Sydney", 151.21, -33.87, "Australia"),
+  wp("Sri Lanka", 79.86, 6.93, "Colombo"),
+  wp("Canada", -79.38, 43.65, "Toronto"),
 ];
 const worldPoints = [
   { icon: FileText, title: "Documentation help", text: "Inventory and customs paperwork, prepared with you." },
@@ -90,6 +94,7 @@ function RouteMap({
   active,
   setActive,
   originLabel,
+  labelAbove = false,
   dotOpacity,
 }: {
   src: string;
@@ -100,6 +105,8 @@ function RouteMap({
   active: string | null;
   setActive: (n: string | null) => void;
   originLabel: string;
+  /** Put the origin label above the dot (when destinations sit right next to it). */
+  labelAbove?: boolean;
   dotOpacity: string;
 }) {
   const current = pins.find((p) => p.name === active);
@@ -140,7 +147,7 @@ function RouteMap({
         <span className="relative size-3 rounded-full bg-teal-300 ring-2 ring-navy-950" />
       </span>
       <span
-        className="pointer-events-none absolute translate-x-3 -translate-y-1/2 rounded-full bg-teal-700 px-2.5 py-0.5 text-[10px] font-semibold whitespace-nowrap sm:text-xs"
+        className={`pointer-events-none absolute rounded-full ${labelAbove ? "-translate-x-1/2 -translate-y-[calc(100%+12px)]" : "translate-x-3 -translate-y-1/2"} bg-teal-700 px-2.5 py-0.5 text-[10px] font-semibold whitespace-nowrap sm:text-xs`}
         style={{ left: pct(origin.x, w), top: pct(origin.y, h) }}
       >
         {originLabel}
@@ -227,8 +234,9 @@ function IndiaPanel() {
         </ul>
 
         <h3 className="mt-10 text-2xl !text-white">
-          Popular <span className="accent !text-teal-300">routes</span>
+          Anywhere in <span className="accent !text-teal-300">India</span>
         </h3>
+        <p className="mt-2 text-white/60">We move PAN India, to any city or town. Popular routes:</p>
         <ul className="mt-4 grid gap-2 sm:grid-cols-2">
           {popularRoutes.map((city) => {
             const r = indiaRoutes.find((p) => p.name === city)!;
@@ -290,6 +298,7 @@ function WorldPanel() {
           active={active}
           setActive={setActive}
           originLabel="Gurgaon HQ"
+          labelAbove
           dotOpacity="opacity-[0.16]"
         />
       </div>

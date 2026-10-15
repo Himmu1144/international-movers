@@ -119,7 +119,7 @@ export const serviceContent: Record<string, ServiceContent> = {
     metaDescription:
       "International relocation from Gurgaon with export-grade packing, documentation support and sea or air freight coordination. Free survey.",
     h1: ["Moving abroad, with a ", "global", " team behind you."],
-    intro: "Export-grade packing, paperwork support and freight coordination for moves to the UAE, UK, USA, Canada, Australia and more.",
+    intro: "Export-grade packing, paperwork support and freight coordination for moves to Dubai, Sri Lanka, Nepal, Bhutan and Canada.",
     overview: [
       "Moving overseas involves more than packing. There’s customs paperwork, shipping options, destination rules and timelines that all have to line up. Our international relocation team guides you through each step.",
       "We pack your goods to export standards, help you prepare the documents, and coordinate sea or air freight so your belongings reach your new country safely.",
@@ -139,7 +139,7 @@ export const serviceContent: Record<string, ServiceContent> = {
       { title: "Delivery abroad", text: "Customs clearance support and delivery to your new home." },
     ],
     faqs: [
-      { q: "Which countries do you move to?", a: "We coordinate moves to most countries, including the UAE, UK, USA, Canada, Australia, Singapore and Europe." },
+      { q: "Which countries do you move to?", a: "We move households to Dubai, Sri Lanka, Nepal, Bhutan and Canada. Moving somewhere else? Ask us and we’ll let you know." },
       { q: "Should I choose sea or air freight?", a: "Sea freight is more economical for full households. Air freight is faster and suits smaller, urgent shipments." },
       { q: "What documents do I need?", a: "Typically your passport, visa, an inventory list and destination-specific forms. Our team will guide you based on your country." },
       { q: "How long does an international move take?", a: "Air shipments can take 1–2 weeks; sea shipments usually 4–8 weeks depending on the route and customs." },

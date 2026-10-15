@@ -89,9 +89,9 @@ export function About() {
           <Float className="absolute -bottom-8 left-3 sm:-left-10" delay={0.5}>
             <div className="rounded-xl bg-white p-5 shadow-[0_24px_60px_-20px_rgb(0_50_103/0.35)] ring-1 ring-line sm:p-6">
               <p className="font-display text-4xl font-medium tracking-tight text-navy-700 sm:text-5xl">
-                <CountUp value={site.stats[3].value} />
+                <CountUp value={site.stats[1].value} suffixClass="text-teal-500" />
               </p>
-              <p className="mt-1 text-sm text-muted">sq. ft. secure storage</p>
+              <p className="mt-1 text-sm text-muted">happy customers</p>
             </div>
           </Float>
 

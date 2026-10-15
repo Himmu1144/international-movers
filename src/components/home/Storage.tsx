@@ -1,9 +1,8 @@
 import Link from "next/link";
 import { ArrowRight, Boxes, CalendarClock, Cctv, Droplets, ShieldCheck } from "lucide-react";
 import Image from "next/image";
-import { CountUp, Float, ParallaxY, Reveal } from "@/components/motion";
+import { Float, ParallaxY, Reveal } from "@/components/motion";
 import { SectionHeading } from "@/components/ui";
-import { site } from "@/lib/site";
 
 const features = [
   { icon: Cctv, title: "CCTV monitored", text: "Round-the-clock cameras and controlled access." },
@@ -103,9 +102,9 @@ export function Storage() {
           <Float className="absolute -bottom-8 -left-2 sm:-left-8" delay={0.4}>
             <div className="rounded-xl border border-white/15 bg-navy-900/80 p-5 shadow-2xl backdrop-blur-md sm:p-6">
               <p className="font-display text-4xl font-medium tracking-tight sm:text-5xl">
-                <CountUp value={site.stats[3].value} />
+                Flexible
               </p>
-              <p className="mt-1 text-sm text-white/60">sq. ft. of secure space</p>
+              <p className="mt-1 text-sm text-white/60">store by the week, month or year</p>
             </div>
           </Float>
 

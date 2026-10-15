@@ -8,9 +8,9 @@ import { Pill, SectionHeading } from "@/components/ui";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "About Us | International Movers and Storage" },
+  title: { absolute: "Meet Your Moving Partner | International Movers and Storage" },
   description:
-    "Meet the team behind International Movers and Storage — packing, moving and secure storage for homes, offices and vehicles from Gurgaon to anywhere.",
+    "Know about International Movers and Storage, your Gurgaon-based relocation partner for home shifting, office relocation, domestic moving and secure storage.",
   alternates: { canonical: "/about" },
 };
 
@@ -44,7 +44,7 @@ export default function AboutPage() {
         label="About us"
         title={
           <>
-            Your move, our <span className="accent !text-teal-300">responsibility</span>.
+            Your Partner in Every <span className="accent !text-teal-300">New Beginning</span>
           </>
         }
         quoteHref="/#quote"

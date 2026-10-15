@@ -7,9 +7,9 @@ import { QuoteForm } from "@/components/QuoteForm";
 import { fullAddress, mailHref, site, telHref, waHref } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: { absolute: "Contact Us | Free Moving Quote | International Movers and Storage" },
+  title: { absolute: "Contact Packers and Movers in Gurgaon | Get a Quote" },
   description:
-    "Call, WhatsApp or send your move details for a free, no-obligation quote. Packers, movers and storage in Gurgaon, Delhi NCR and across India.",
+    "Contact International Movers and Storage in Gurgaon for home shifting, office relocation, packing and storage. Request a free moving quote.",
   alternates: { canonical: "/contact" },
 };
 
